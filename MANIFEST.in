@@ -1,0 +1,4 @@
+include *.txt *.spec
+recursive-include nitratexmlrpc *.py
+graft docs
+graft nitratexmlrpc/templates
