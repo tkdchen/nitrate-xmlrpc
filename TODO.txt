@@ -1,0 +1,6 @@
+TODO
+====
+
+- Simplify and rewrite docstrings in reStructuredText.
+- Write API in detail into documentation.
+- Unittest
