@@ -13,13 +13,13 @@ def get_long_description():
 
 
 setup(
-    name='nitratexmlrpc',
+    name='nitrate-xmlrpc',
     version=get_version(),
     author='Xuqing Kuang',
     author_email='xkuang@redhat.com',
     description='XMLRPC APIs for Nitrate',
     long_description=get_long_description(),
-    url='https://github.com/<username>/nitrate.xmlrpc.git',
+    url='https://github.com/tkdchen/nitrate-xmlrpc.git',
     license='GPLv2+',
     packages=find_packages(),
     keywords='kerberos nitrate xmlrpc',
@@ -37,6 +37,7 @@ setup(
         'Intended Audience :: System Administrators',
         'License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)',
         'Programming Language :: Python :: 2.7',
-        'Topic :: Internet :: WWW/HTTP :: WSGI :: Application'
+        'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
+        'Topic :: Software Development :: Libraries :: Python Modules',
     ]
 )
