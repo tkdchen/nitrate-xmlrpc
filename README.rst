@@ -1,7 +1,7 @@
-.. content::
+.. contents:: Table of Contents
 
-nitarte XMLRPC
-==============
+Introduction
+============
 
 nitrate-xmlrpc provides XMLRPC API for nitrate to allow external applications to
 access test cases' information via scripts.
@@ -9,7 +9,7 @@ access test cases' information via scripts.
 XMLRPC APIs are implemented in a standard django application.
 
 Installation
-------------
+============
 
 You can install this package by issuing pip or easy_install.
 
@@ -24,8 +24,8 @@ Or, using following command,
   $ cd path/to/nitrate-xmlrpc
   $ python setup.py install
 
-How to use
-----------
+Usage
+=====
 
 To enable this XMLRPC APIs is quite easy, just like any other django
 applications.
