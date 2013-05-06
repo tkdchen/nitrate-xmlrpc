@@ -7,7 +7,7 @@ def get_version():
     return open('VERSION.txt', 'r').read().strip()
 
 def get_long_description():
-    readme = open('README.txt', 'r').read().strip()
+    readme = open('README.rst', 'r').read().strip()
     changes = open('CHANGES.txt', 'r').read().strip()
     return '%s\n%s' % (readme, changes)
 
