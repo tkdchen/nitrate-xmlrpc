@@ -3,19 +3,19 @@
 
 XMLRPC_METHODS = {
     'nitrate_XMLRPC': (
-        ('nitrate.xmlrpc.auth', 'Auth'),
-        ('nitrate.xmlrpc.build', 'Build'),
-        ('nitrate.xmlrpc.env', 'Env'),
-        ('nitrate.xmlrpc.product', 'Product'),
-        ('nitrate.xmlrpc.testcase', 'TestCase'),
-        ('nitrate.xmlrpc.testcaserun', 'TestCaseRun'),
-        ('nitrate.xmlrpc.testcaseplan', 'TestCasePlan'),
-        ('nitrate.xmlrpc.testopia', 'Testopia'),
-        ('nitrate.xmlrpc.testplan', 'TestPlan'),
-        ('nitrate.xmlrpc.testrun', 'TestRun'),
-        ('nitrate.xmlrpc.user', 'User'),
-        ('nitrate.xmlrpc.version', 'Version'),
-        ('nitrate.xmlrpc.tag', 'Tag'),
+        ('nitratexmlrpc.api.auth', 'Auth'),
+        ('nitratexmlrpc.api.build', 'Build'),
+        ('nitratexmlrpc.api.env', 'Env'),
+        ('nitratexmlrpc.api.product', 'Product'),
+        ('nitratexmlrpc.api.testcase', 'TestCase'),
+        ('nitratexmlrpc.api.testcaserun', 'TestCaseRun'),
+        ('nitratexmlrpc.api.testcaseplan', 'TestCasePlan'),
+        ('nitratexmlrpc.api.testopia', 'Testopia'),
+        ('nitratexmlrpc.api.testplan', 'TestPlan'),
+        ('nitratexmlrpc.api.testrun', 'TestRun'),
+        ('nitratexmlrpc.api.user', 'User'),
+        ('nitratexmlrpc.api.version', 'Version'),
+        ('nitratexmlrpc.api.tag', 'Tag'),
     ),
 }
 
