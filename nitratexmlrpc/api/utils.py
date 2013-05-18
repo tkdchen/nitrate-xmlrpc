@@ -18,7 +18,19 @@
 
 from nitrate.apps.management.models import Product
 
+
+# Don't know for what purpose to write this method.
 def pre_check_product(values):
+    '''Get Product object by ID or name.
+
+    To get specific Product object by ID or name, whose value is retrieved from
+    argument ``values``. When a dictionary instance is passed, it must contain
+    an item with key named product and value that is either in type string or
+    int.
+
+    Arguments:
+    - values: can be an object of dictionary, str or int.
+    '''
     if isinstance(values, dict):
         if not values.get('product'):
             return
@@ -33,9 +45,18 @@ def pre_check_product(values):
         product_id = int(product_str)
         return Product.objects.get(id = product_id)
     except ValueError:
-       return Product.objects.get(name = product_str)
+        return Product.objects.get(name = product_str)
 
 def pre_process_ids(value):
+    '''Convert possible input of IDs to list
+
+    Method accepts three possible input of IDs. One is a list that consists of
+    values of either str or int. Second is a string containing IDs separated by
+    comma. And the last one is a single value of int.
+
+    Arguments:
+    - value: object of list, str or int.
+    '''
     if isinstance(value, list):
         return [isinstance(c, int) and c or int(c.strip()) for c in value if c]
 
@@ -76,18 +97,19 @@ class Comment(object):
             d_form = comment_form(target)
             timestamp = str(time.time()).split('.')[0]
             object_pk = str(target.pk)
-            data = {
-                'content_type': self.content_type,
-                'object_pk': object_pk,
-                'timestamp': timestamp,
-                'comment': self.comment
-            }
             security_hash_dict = {
                 'content_type': self.content_type,
                 'object_pk': object_pk,
                 'timestamp': timestamp
             }
-            data['security_hash'] = d_form.generate_security_hash(**security_hash_dict)
+            sec_hash = d_form.generate_security_hash(**security_hash_dict)
+            data = {
+                'content_type': self.content_type,
+                'object_pk': object_pk,
+                'timestamp': timestamp,
+                'comment': self.comment,
+                'security_hash': sec_hash,
+            }
             form = comment_form(target, data=data)
 
             # Response the errors if got
@@ -114,5 +136,3 @@ class Comment(object):
                 comment = comment,
                 request = self.request
             )
-
-        return
