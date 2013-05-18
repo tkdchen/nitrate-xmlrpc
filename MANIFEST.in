@@ -1,4 +1,4 @@
-include *.txt *.spec
+include README.rst *.txt *.spec
 recursive-include nitratexmlrpc *.py
 graft docs
 graft nitratexmlrpc/templates
