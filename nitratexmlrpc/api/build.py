@@ -16,8 +16,9 @@
 # Authors:
 #   Xuqing Kuang <xkuang@redhat.com>
 
-from kobo.django.xmlrpc.decorators import user_passes_test, login_required, log_call
-from nitrate.apps.management.models import Product, TestBuild
+from kobo.django.xmlrpc.decorators import log_call
+from kobo.django.xmlrpc.decorators import user_passes_test
+from nitrate.apps.management.models import TestBuild
 from utils import pre_check_product
 
 __all__ = (
@@ -185,9 +186,12 @@ def update(request, build_id, values):
             p = check_product(values)
             tb.product = p
 
-        if values.get('name'): tb.name = values['name']
-        if values.get('description'): tb.description = values['description']
-        if values.get('is_active'): tb.is_active = values.get('is_active', True)
+        if values.get('name'):
+            tb.name = values['name']
+        if values.get('description'):
+            tb.description = values['description']
+        if values.get('is_active'):
+            tb.is_active = values.get('is_active', True)
         tb.save()
     except ValueError, error:
         return error
