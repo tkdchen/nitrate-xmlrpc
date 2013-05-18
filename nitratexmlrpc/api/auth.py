@@ -25,6 +25,7 @@ __all__ = (
 )
 
 def check_user_name(parameters):
+    ''' Extract username and password from REQUEST '''
     username = parameters.get('username')
     password = parameters.get('password')
     if not username or not password:
@@ -57,7 +58,8 @@ def login(request, parameters):
         user = backend.authenticate(*check_user_name(parameters))
 
         if user:
-            user.backend = "%s.%s" % (backend.__module__, backend.__class__.__name__)
+            user.backend = "%s.%s" % (backend.__module__,
+                                      backend.__class__.__name__)
             django.contrib.auth.login(request, user)
             return request.session.session_key
 
@@ -80,12 +82,11 @@ def login_krbv(request):
     from django.contrib.auth.middleware import RemoteUserMiddleware
 
     middleware = RemoteUserMiddleware()
-    user = middleware.process_request(request)
+    middleware.process_request(request)
 
     return request.session.session_key
 
 def logout(request):
     """Description: Delete session information."""
     django.contrib.auth.logout(request)
-    return
 
