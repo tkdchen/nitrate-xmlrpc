@@ -10,7 +10,7 @@ Summary:        XMLRPC API for Nitrate
 
 Group:          Development/Languages
 License:        GPLv2+
-URL:            https://fedorahosted.org/nitrate/browser/trunk/nitrate
+URL:            https://github.com/tkdchen/nitrate-xmlrpc
 Source0:        %{pkg_name}-%{version}.tar.gz
 BuildArch:      noarch
 
