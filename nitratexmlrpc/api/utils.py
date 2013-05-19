@@ -56,6 +56,12 @@ def pre_process_ids(value):
 
     Arguments:
     - value: object of list, str or int.
+
+    Exceptions:
+    - if input values is not an object of list, str, or int, TypeError is
+      raised.
+    - if any object that cannot be converted to int by method int(), ValueError
+      is raised.
     '''
     if isinstance(value, list):
         return [isinstance(c, int) and c or int(c.strip()) for c in value if c]
